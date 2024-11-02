@@ -5,11 +5,12 @@ void Main_Game(unsigned short user_select){
     int all[] = {1,2,3};
     srand(time(NULL));
     int comp_select = 1 + rand() % 3; // {1 = rock, 2 = paper, 3 == scissors}
-    if(user_select == comp_select) {
-        cout<<"Restart";
-
-    }
-    //logic ЫЫЫЫЫЫ сУКА ЛОГИКА ХУЙНЯ
+    for(unsigned short i; i <1; i++) {
+        if(user_select == comp_select) {
+            cout<<"Restart";
+            break;
+        }
+        //logic ЫЫЫЫЫЫ сУКА ЛОГИКА ХУЙНЯ
         // МЫ ЗНАЕМ ШО КАМЕНЬ БЬЕТ НОЖНИЦЫ, НО СОСЕТ ОТ БУМАГИ
         if(user_select == 1 && comp_select == 3) {
             cout<<"USER WIN!!!";
@@ -26,6 +27,7 @@ void Main_Game(unsigned short user_select){
         else {
             cout<<"Compudahter WIN!!";
         }
+    }
 }
 
 
@@ -33,7 +35,8 @@ int main() {
     unsigned short user_select;
     cout<<"Select rock(1), paper(2), scissors(3):";
     cin>>user_select;
-    Main_Game(user_select);
-
+    if(user_select <= 3 || user_select< 0) {
+        Main_Game(user_select);
+    }
     return 0;
 }
